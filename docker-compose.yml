@@ -1,0 +1,12 @@
+version: '3'
+    
+services:
+  nginx:
+    image: nginx #:5.7.26
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "555:80"
+    volumes:
+      - ./vue:/usr/share/nginx/html
+      - ./conf:/etc/nginx/conf.d
